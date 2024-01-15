@@ -14,6 +14,7 @@ namespace PRG_assignment
         {
             Option = option;
             Scoops = scoops;
+            
 
         }
     }
