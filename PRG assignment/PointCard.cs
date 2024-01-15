@@ -69,11 +69,14 @@ namespace PRG_assignment
 
         public void Punch()
         {
-            PunchCard += 1;
             if (PunchCard == 10)
-            {
-
+            { 
                 PunchCard = 0;
+            }
+
+            else
+            {
+                PunchCard += 1;
             }
             
         }
