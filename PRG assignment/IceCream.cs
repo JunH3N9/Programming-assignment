@@ -8,8 +8,10 @@ namespace PRG_assignment
 {
     internal class IceCream
     {
+        private string option { get; set; }
         public string Option { get; set; }
 
+        private int scoops { get; set; } 
         public int Scoops { get; set; }
 
         public List<Flavour> Flavours { get; set; }
@@ -28,7 +30,7 @@ namespace PRG_assignment
 
         public double CalculatePrice()
         {
-
+            return 0;
         }
     }
 }
