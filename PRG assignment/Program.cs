@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Microsoft.VisualBasic.FileIO;
 using PRG_assignment;
 using System;
+using System.Collections.Generic;
 
 void displayMenu()
 {
@@ -17,20 +19,51 @@ void getOrders()
         {
             string[] order = s.Split(',');
             //Create flavour and add them to a list
-            if (order[9] != null)
+            List<Flavour> flavourlist = new List<Flavour>();
+            for(int i = 8; i < 11; i++)
             {
-                if (order[10] != null)
+                if (order[i] != " ")
                 {
+                    if (order[i] == "Durian" || order[i] == "Ube" || order[i] == "Sea Salt")
+                    {
+                        Flavour flavour = new Flavour(order[i], true, Convert.ToInt32(order[5]));
+                        flavourlist.Add(flavour);
 
+                    }
+                    else
+                    {
+                        Flavour flavour = new Flavour(order[i], false, Convert.ToInt32(order[5]));
+                        flavourlist.Add(flavour);
+                    }
                 }
+            }
+            List<Topping> toppingsList = new List<Topping>();
+            for (int i = 11; i < 14; i++)
+            {
+                Topping topping = new Topping(order[i]);
+                toppingsList.Add(topping);
             }
 
             if (order[4] == "Waffle")
             {
-                
-                Waffle waffle = new Waffle(order[4], order[5], order[7]);
+                Waffle waffle = new Waffle(order[4], Convert.ToInt32(order[5]), flavourlist, toppingsList, order[7]);
             }
-        }
+            else if (order[4] == "Cone")
+            {
+                if (order[6] == "FALSE")
+                {
+                    Cone cone = new Cone(order[4], Convert.ToInt32(order[5]), flavourlist, toppingsList, false);
+                }
+                else
+                {
+                    Cone cone = new Cone(order[4], Convert.ToInt32(order[5]), flavourlist, toppingsList, true);
+                }
+            }
+            else if (order[4] == "Cup")
+            {
+
+            }
+                
     }
 
 }

@@ -13,9 +13,11 @@ namespace PRG_assignment
         public Cup(string option, int scoops, List<Flavour> Flavours, List<Topping> Topping) 
         {
             Option = option;
-            Scoops = scoops;
-            
-
+            Scoops = scoops;         
+        }
+        public override double CalculatePrice()
+        {
+            return 0;
         }
     }
 }
