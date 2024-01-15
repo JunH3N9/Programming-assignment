@@ -8,24 +8,26 @@ namespace PRG_assignment
 {
     internal class IceCream
     {
-        private string option { get; set; }
+        private string option;
         public string Option { get; set; }
 
-        private int scoops { get; set; } 
+        private int scoops;
         public int Scoops { get; set; }
 
+        private List<Flavour> flavours;
         public List<Flavour> Flavours { get; set; }
 
+        private List<Topping> toppings;
         public List<Topping> Toppings { get; set; }
 
         public IceCream() { }
 
-        public IceCream(string option, int scoops, List<Flavour> flavours, List<Topping> toppings)
+        public IceCream(string Option, int Scoops, List<Flavour> Flavours, List<Topping> Toppings)
         {
-            Option = option;
-            Scoops = scoops;
-            Flavours = flavours;
-            Toppings = toppings;
+            option = Option;
+            scoops = Scoops;
+            flavours = Flavours;
+            toppings = Toppings;
         }
 
         public double CalculatePrice()

@@ -8,21 +8,21 @@ namespace PRG_assignment
 {
     internal class PointCard
     {
-        private int points { get; set; }
+        private int points;
         public int Points { get; set; }
 
-        private int punchcard { get; set; }
+        private int punchcard;
         public int PunchCard { get; set; }
 
-        private int tier { get; set; }
+        private int tier;
         public string Tier { get; set; }
 
         public PointCard() { }
 
         public PointCard(int points, int punchCard)
         {
-            Points = points;
-            PunchCard = punchCard;
+            points = Points;
+            punchCard = PunchCard;
         }
 
         public void AddPoints(double amount)
@@ -69,12 +69,16 @@ namespace PRG_assignment
 
         public void Punch()
         {
-            PunchCard += 1;
             if (PunchCard == 10)
-            {
+            { 
                 PunchCard = 0;
             }
-            //Give free ice cream, idk how to do lol
+
+            else
+            {
+                PunchCard += 1;
+            }
+            
         }
     }
 }
