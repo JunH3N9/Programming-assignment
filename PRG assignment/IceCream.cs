@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG_assignment
 {
-    internal class IceCream
+    internal abstract class IceCream
     {
         private string option;
         public string Option { get; set; }
@@ -30,9 +30,7 @@ namespace PRG_assignment
             toppings = Toppings;
         }
 
-        public double CalculatePrice()
-        {
-            return 0;
-        }
+        public abstract double CalculatePrice();
+        
     }
 }
